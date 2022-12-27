@@ -4,5 +4,6 @@ export const Navbar = ()=> {
     <Link to = '/'> Home </Link>
     <Link to = '/menu'> Menu </Link>
     <Link to = '/contact'> Contact </Link>
+    <Link to = '/profile/:username'> Profile</Link>
    </div>
 }
