@@ -1,13 +1,12 @@
-import { useNavigate , useParams} from "react-router-dom";
-export const Profile = ()=> {
-let navigate = useNavigate() ;
-let {username} = useParams() ;
+import ChangeProfile from "../components/ChangeProfile";
+
+export const Profile = (props)=> {
+
     return (
         <div>
-            <h1>This is a profile page Page {username}</h1>
-            <button onClick={()=> {
-                navigate('/menu')
-            }}>Go to menu page</button>
+            <h1>This is a profile page : {props.username}</h1>
+            <ChangeProfile user = {props.setusername}/>
+            
         </div>
         );
 
