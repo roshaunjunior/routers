@@ -1,3 +1,7 @@
+//import { useQuery } from '@tanstack/react-query'
 export const Menu = ()=> {
-    return <h1>This is a Menu Page</h1>
+    //const {} = useQuery(["cat"] , ) 
+    return <h1>This is a Menu Page
+
+    </h1>
 }

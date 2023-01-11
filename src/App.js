@@ -5,11 +5,21 @@ import { Menu } from './pages/Menu';
 import { Contact } from './pages/Contact';
 import { Profile } from './pages/Profile';
 import { Navbar } from './Navbar';
+import { QueryClient , QueryClientProvider } from '@tanstack/react-query';
+
 
 function App() {
+
+  const client = new QueryClient({defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: true
+    },
+  },
+        }) ;
   return (
     <div className="App">
-        
+      <QueryClientProvider client={client}>
+
        <Router>
         <Navbar/>
 
@@ -18,11 +28,12 @@ function App() {
            <Route path = '/' element = {<Home/>}/>
            <Route path = '/menu' element= {<Menu/>}/>
            <Route path = '/contact' element={<Contact/>} />
-           <Route path = '/profile/:username' element = {<Profile/>}/>
+           <Route path = '/profile' element = {<Profile/>}/>
            <Route path = '*' element = {<h1>Page Not Fount</h1>}/>
          </Routes>
        </Router>
 
+      </QueryClientProvider>
     </div>
   );
 }
